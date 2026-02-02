@@ -25,9 +25,13 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
 
-        $settings = Schema::hasTable('settings')
-            ? (Setting::first() ?? new Setting(Setting::defaults()))
-            : new Setting(Setting::defaults());
+        try {
+            $settings = Schema::hasTable('settings')
+                ? (Setting::first() ?? new Setting(Setting::defaults()))
+                : new Setting(Setting::defaults());
+        } catch (\Exception $e) {
+            $settings = new Setting(Setting::defaults());
+        }
 
         View::share('appSettings', $settings);
     }

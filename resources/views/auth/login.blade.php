@@ -52,9 +52,11 @@
                 transform: translateY(0) rotate(0deg);
                 opacity: 0.15;
             }
+
             50% {
                 opacity: 0.35;
             }
+
             100% {
                 transform: translateY(-30px) rotate(12deg);
                 opacity: 0.15;
@@ -62,10 +64,12 @@
         }
 
         @keyframes clapPulse {
+
             0%,
             100% {
                 transform: translateY(0) scale(1);
             }
+
             50% {
                 transform: translateY(-4px) scale(1.1);
             }
@@ -88,7 +92,7 @@
         <div class="card-body p-4">
             <div class="text-center mb-3">
                 <div class="rounded-circle mx-auto mb-2"
-                     style="width: 72px; height: 72px; background: linear-gradient(135deg, #f97316, #ec4899); display: grid; place-items: center;">
+                    style="width: 72px; height: 72px; background: linear-gradient(135deg, #f97316, #ec4899); display: grid; place-items: center;">
                     <div class="d-flex flex-column align-items-center justify-content-center">
                         <span style="font-size: 1.6rem;">📖</span>
                         <span class="text-white fw-bold small">SMS</span>
@@ -112,9 +116,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
-            <p class="text-center mt-3 mb-0">
-                <small class="text-muted">Need an account? <a href="{{ route('register') }}">Register</a></small>
-            </p>
+            <!-- Registration disabled -->
         </div>
     </div>
 
@@ -133,4 +135,3 @@
         </script>
     @endpush
 @endsection
-
